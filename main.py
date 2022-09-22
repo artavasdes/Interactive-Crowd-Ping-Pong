@@ -214,4 +214,4 @@ print("Starting Values")
 print("Left Values", LeftRealMaxVal, LeftMaxVal, LeftMinVal)
 print("Right Values", RightRealMaxVal, RightMaxVal, RightMinVal)
 
-cv.destroyAllWindows
+cv.destroyAllWindows()

@@ -10,7 +10,7 @@ public class PythonScript : MonoBehaviour
     dynamic np;
 
     // Start is called before the first frame update
-    void Start()
+    void OnClick()
     {
         Runtime.PythonDLL = Application.dataPath + "/StreamingAssets/embedded-python/python37.dll";
         PythonEngine.Initialize(mode: ShutdownMode.Reload);
