@@ -19,7 +19,7 @@ parser.add_argument("--height", default = 720, type = int, help = "Set height fo
 args = parser.parse_args()
 
 #Initializes the pong game
-os.startfile("Interactive-Crowd-Game-main\Interactive_Pong\Build\Pong.exe")
+os.startfile("Interactive_Pong\Build\Pong.exe")
 
 # Create UDP socket to use for sending (and receiving)
 sock = U.UdpComms(udpIP="127.0.0.1", portTX=8000, portRX=8001, enableRX=True, suppressWarnings=True)
