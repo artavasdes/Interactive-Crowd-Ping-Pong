@@ -19,8 +19,17 @@ We were able to create an interactive game on this large of a scale with the use
     - Matplotlib
 
 ## How to Run
-1. Plug in the two cameras
-2. Run the main python file
+1. Open up command prompt and cd into the directory of your choice
+2. Clone this respository
+```
+git clone https://github.com/artavasdes/Light-Ping-Pong
+```
+3. Cd into the repository
+```
+cd Light-Ping-Pong
+```
+4. Plug in the two cameras
+5. Run the main python file
 ```
 python main.py
 ```
@@ -33,9 +42,9 @@ To see a list of possible commands
 python main.py --help
 ```
 
-3. A unity window for ping pong will automatically open up
-4. Follow the prompts for a quick callibration
-5. Go ahead and click "play" in the Ping Pong window
+6. A unity window for ping pong will automatically open up
+7. Follow the prompts for a quick callibration
+8. Go ahead and click "play" in the Ping Pong window
 
 ## Acknowledgments
 Udp Communication code between Python and Unity was borrowed from Siliconifier's [Python-Unity-Socket-Communication](https://github.com/Siliconifier/Python-Unity-Socket-Communication)
