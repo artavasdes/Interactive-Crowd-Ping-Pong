@@ -33,17 +33,17 @@ LeftCamera1.set(cv.CAP_PROP_FPS, args.fps)
 LeftCamera1.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 LeftCamera1.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
 
-LeftCamera2 = cv.VideoCapture(0, cv.CAP_DSHOW)
+LeftCamera2 = cv.VideoCapture(1, cv.CAP_DSHOW)
 LeftCamera2.set(cv.CAP_PROP_FPS, args.fps)
 LeftCamera2.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 LeftCamera2.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
 
-RightCamera1 = cv.VideoCapture(0, cv.CAP_DSHOW)
+RightCamera1 = cv.VideoCapture(2, cv.CAP_DSHOW)
 RightCamera1.set(cv.CAP_PROP_FPS, args.fps)
 RightCamera1.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 RightCamera1.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
 
-RightCamera2 = cv.VideoCapture(0, cv.CAP_DSHOW)
+RightCamera2 = cv.VideoCapture(3, cv.CAP_DSHOW)
 RightCamera2.set(cv.CAP_PROP_FPS, args.fps)
 RightCamera2.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 RightCamera2.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
@@ -70,6 +70,7 @@ def callibration(capture, capturename, bright):
     #waiting loop for saved callibration image
     while True:
         isTrue, frame = capture.read()
+        frame = cv.resize(frame,(args.width, args.height), interpolation = cv.INTER_CUBIC) 
         cam = cv.flip(frame, 1)
         Feed = calc_simple(cam)
         cv.imshow("Feed", Feed)
@@ -168,23 +169,23 @@ def feed_calc(originalval, minval, realmaxval):
     return printed_value
 
 #Bright Callibration Image
-leftbright1 = callibration(LeftCamera1, "Left_Bright", True)
+leftbright1 = callibration(LeftCamera1, "Left_Bright1", True)
 cv.imshow("Left Bright", leftbright1)
-leftbright2 = callibration(LeftCamera2, "Left_Bright", True)
+leftbright2 = callibration(LeftCamera2, "Left_Bright2", True)
 cv.imshow("Left Bright", leftbright2)
-rightbright1 = callibration(RightCamera1, "Right_Bright", True)
+rightbright1 = callibration(RightCamera1, "Right_Bright1", True)
 cv.imshow("Right Bright", rightbright1)
-rightbright2 = callibration(RightCamera2, "Right_Bright", True)
+rightbright2 = callibration(RightCamera2, "Right_Bright2", True)
 cv.imshow("Right Bright", rightbright2)
 
 #Dark Callibration Image
-leftdark1 = callibration(LeftCamera1, "Left_Dark", False)
+leftdark1 = callibration(LeftCamera1, "Left_Dark1", False)
 cv.imshow("Left Dark", leftdark1)
-leftdark2 = callibration(LeftCamera2, "Left_Dark", False)
+leftdark2 = callibration(LeftCamera2, "Left_Dark2", False)
 cv.imshow("Left Dark", leftdark2)
-rightdark1 = callibration(RightCamera1, "Right_Dark", False)
+rightdark1 = callibration(RightCamera1, "Right_Dark1", False)
 cv.imshow("Right Dark", rightdark1)
-rightdark2 = callibration(RightCamera2, "Right_Dark", False)
+rightdark2 = callibration(RightCamera2, "Right_Dark2", False)
 cv.imshow("Right Dark", rightdark2)
 
 LeftVal_1, LeftMaxVal_1, LeftMinVal_1 = setup(leftbright1, leftdark1)
@@ -204,7 +205,7 @@ cv.destroyAllWindows()
 if args.save_video:
     fourcc = cv.VideoWriter_fourcc('m', 'p', '4', 'v')
     vid_number = os.listdir("media/videos/")
-    out = cv.VideoWriter(f"media/videos/recorded_video_{len(vid_number)}.mp4", fourcc, args.fps/2, (args.width * 2, args.height))
+    out = cv.VideoWriter(f"media/videos/recorded_video_{len(vid_number)}.mp4", fourcc, args.fps/4, (args.width * 2, args.height * 2))
 
 #Video Loop
 while True:
@@ -282,10 +283,10 @@ while True:
     print("")
 
     if args.save_video:
-        combined_feed_left = cv.hconcat([LeftFeed1, LeftFeed2])
-        combined_feed_right = cv.hconcat([RightFeed1, RightFeed2])
-        out.write(combined_feed_left)
-        out.write(combined_feed_right)
+        combined_feed_left = cv.vconcat([LeftFeed1, LeftFeed2])
+        combined_feed_right = cv.vconcat([RightFeed1, RightFeed2])
+        combined_feed = cv.hconcat([combined_feed_left, combined_feed_right])
+        out.write(combined_feed)
 
 LeftCamera1.release()
 LeftCamera2.release()
