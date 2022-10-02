@@ -13,6 +13,7 @@ This programs uses UdpComms.py from Siliconifier's github repository: https://gi
 #Arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--save_video", default = False, type = bool, help = "True or False to save video of all camera feed")
+parser.add_argument("--skip_callibration", default = False, type = bool, help = "True or False to skip callibration process")
 parser.add_argument("--fps", default = 30, type = int, help = "Set FPS of all cameras")
 parser.add_argument("--width", default = 1280, type = int, help = "Set width for cameras")
 parser.add_argument("--height", default = 720, type = int, help = "Set height for cameras")
@@ -33,8 +34,8 @@ LeftCamera.set(cv.CAP_PROP_FPS, args.fps)
 LeftCamera.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 LeftCamera.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
 
-RightCamera = LeftCamera
-#RightCamera = cv.VideoCapture(1)
+#RightCamera = LeftCamera
+RightCamera = cv.VideoCapture(1)
 RightCamera.set(cv.CAP_PROP_FPS, args.fps)
 RightCamera.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 RightCamera.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
@@ -60,6 +61,7 @@ def callibration(capture, capturename, bright):
     #waiting loop for saved callibration image
     while True:
         isTrue, frame = capture.read()
+        frame = cv.resize(frame,(args.width, args.height), interpolation = cv.INTER_CUBIC) 
         cam = cv.flip(frame, 1)
         Feed = calc_simple(cam)
         cv.imshow("Feed", Feed)
@@ -193,6 +195,7 @@ while True:
     #Left
     #Sets up camera feeds for analysis
     isTrue, frame = LeftCamera.read()
+    frame = cv.resize(frame,(args.width, args.height), interpolation = cv.INTER_CUBIC)
     LeftFeed = cv.flip(frame, 1)
 
     LeftDisplayFeed = calc_simple(LeftFeed)
@@ -204,6 +207,7 @@ while True:
     #Right
     #Sets up camera feeds for analysis
     isTrue, frame = RightCamera.read()
+    frame = cv.resize(frame,(args.width, args.height), interpolation = cv.INTER_CUBIC)
     RightFeed = cv.flip(frame, 1)
 
     RightDisplayFeed = calc_simple(RightFeed)
