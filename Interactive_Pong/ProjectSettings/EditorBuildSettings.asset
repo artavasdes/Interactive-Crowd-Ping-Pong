@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: fb865babba14943209a164f300cdaae1
   - enabled: 1
-    path: Assets/Scenes/Pong.unity
+    path: Assets/Scenes/FlashlightPong.unity
     guid: 36cd021a084e144019dec034ead339e7
   - enabled: 1
     path: Assets/Scenes/Win Screen.unity
