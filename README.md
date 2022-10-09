@@ -29,15 +29,13 @@ git clone https://github.com/artavasdes/Light-Ping-Pong
 cd Light-Ping-Pong
 ```
 4. Plug in the two cameras
-5. Run the one of the three python file depending on camera setup
+5. Run one of the three python files depending on your camera setup
 ```
 python 1_camera.py
 ```
-or
 ```
 python 2_camera.py
 ```
-or
 ```
 python 4_camera.py
 ```
