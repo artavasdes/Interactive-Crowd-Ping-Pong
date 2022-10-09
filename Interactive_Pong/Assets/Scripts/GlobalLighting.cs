@@ -9,12 +9,12 @@ public class GlobalLighting : MonoBehaviour
     void Start()
     {
         if (GameModeSetter.GameMode == "Flashlight"){
-            StartCoroutine(ExampleCoroutine());
+            StartCoroutine(LightCoroutine());
         }
         
     }
 
-    IEnumerator ExampleCoroutine()
+    IEnumerator LightCoroutine()
     {
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
 

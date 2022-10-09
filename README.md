@@ -29,22 +29,38 @@ git clone https://github.com/artavasdes/Light-Ping-Pong
 cd Light-Ping-Pong
 ```
 4. Plug in the two cameras
-5. Run the main python file
+5. Run the one of the three python file depending on camera setup
 ```
-python main.py
+python 1_camera.py
+```
+or
+```
+python 2_camera.py
+```
+or
+```
+python 4_camera.py
 ```
 Or use the following command to record a video of all the camera feed
 ```
-python main.py --save_video True
+python 2_camera.py --save_video True
 ```
 To see a list of possible commands
 ```
-python main.py --help
+python 2_camera.py --help
 ```
 
 6. A unity window for ping pong will automatically open up
 7. Follow the prompts for a quick callibration
 8. Go ahead and click "play" in the Ping Pong window
+
+## Unity Game
+As of now, there are three gamemodes available to play:
+1. Classic Normal- ball moves at a constant speed
+2. Classic Hard- ball speeds up by 5% on each successful hit
+3. Flashlight- nothing can be seen on screen except a small radius around the ball
+
+There is also a manual mode available which can be toggled in the main menu. By enabling it, the paddles can be controlled with the following keys respectively: 'W', 'S', Up Arrow and Down Arrow.
 
 ## Acknowledgments
 Udp Communication code between Python and Unity was borrowed from Siliconifier's [Python-Unity-Socket-Communication](https://github.com/Siliconifier/Python-Unity-Socket-Communication)
