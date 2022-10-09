@@ -56,7 +56,7 @@ python 2_camera.py --help
 As of now, there are three gamemodes available to play:
 1. Classic Normal- ball moves at a constant speed
 2. Classic Hard- ball speeds up by 5% on each successful hit
-3. Flashlight- nothing can be seen on screen except a small radius around the ball
+3. Flashlight- nothing can be seen on screen except for a small radius around the ball
 
 There is also a manual mode available which can be toggled in the main menu. By enabling it, the paddles can be controlled with the following keys respectively: 'W', 'S', Up Arrow and Down Arrow.
 
