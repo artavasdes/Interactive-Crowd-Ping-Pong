@@ -5,6 +5,6 @@ using UnityEngine;
 public static class DebugScript
 {
     // Start is called before the first frame update
-    public static bool DebugMode = true;
+    public static bool DebugMode = false;
 
 }
