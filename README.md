@@ -50,6 +50,13 @@ python 2_camera.py --help
 7. Follow the prompts for a quick callibration
 8. Go ahead and click "play" in the Ping Pong window
 
+### Notes on Command Line Arguments
+* Light Range: This command can be accessed by using the argument like so:
+```
+python 1_camera.py --light_range 140 255
+```
+The numbers are on a grayscale range so only values between 0-255 are allowed or else an error will occur. The first value represents the low threshold while the second value represents the high threshold. So in this case, only pixels between 140-255 on grayscale will be considered light pixels. It is recommended to adjust these values prior to use, but we have found the default values (140-255) to be adequate. Originally, we had our low threshold value set lower than 140, but due to light from the projector we decided to increase it, thus reducing unwanted interference.
+
 ## Unity Game
 As of now, there are three gamemodes available to play:
 1. Classic Normal- ball moves at a constant speed
