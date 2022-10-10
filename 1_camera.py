@@ -16,6 +16,7 @@ parser.add_argument("--save_video", default = False, type = bool, help = "True o
 parser.add_argument("--fps", default = 30, type = int, help = "Set FPS of all cameras")
 parser.add_argument("--width", default = 1280, type = int, help = "Set width for cameras")
 parser.add_argument("--height", default = 720, type = int, help = "Set height for cameras")
+parser.add_argument("--light_range", default = [140, 255], nargs = "+", help = "List with 2 values between 0-255 (a low threshold and high threshold) on grayscale. Anything between these 2 values will be counted as light.")
 args = parser.parse_args()
 
 #Initializes the pong game
@@ -33,8 +34,9 @@ camera.set(cv.CAP_PROP_FPS, args.fps)
 camera.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 camera.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
 
-lower = 140
-upper = 255
+lower = int(args.light_range[0])
+upper = int(args.light_range[1])
+
 
 #Create necessary folders
 if not os.path.exists("media"):

@@ -1,8 +1,6 @@
 # Interactive Crowd Game (Ping Pong)
 This repository is the first implementation of our interactive game (Ping-Pong in this case) for large audiences. The game was featured during an assembly at our school and it received a lot of good feedback. Over a 1,000 people participated in the game with two sides competing against each other: left and right. 
 
-**New**: Future improvements are currently in the works
-
 It would be very much appreciated if you tell us about how you used this project at vartanyildiz@gmail.com or vedicpatel@gmail.com
 
 Link to Video: https://www.youtube.com/watch?v=OcLmcevJgVQ
