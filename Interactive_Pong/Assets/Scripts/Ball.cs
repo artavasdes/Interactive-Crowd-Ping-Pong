@@ -48,7 +48,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Paddle"))
         {
             audioManager.Play("Paddle Hit");           
-            if (GameModeSetter.GameMode == "Hard"){
+            if (GameModeSetter.GameMode == "Hard" || GameModeSetter.GameMode == "FlashlightHard"){
                 Vector2 CurrentDirection = rb.velocity;
                 rb.AddForce(CurrentDirection * (this.speed * 0.05f));
             }

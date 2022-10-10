@@ -20,4 +20,10 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Pong");
         GameModeSetter.GameMode = "Flashlight";
     }
+
+    public void PlayFlashlightHard()
+    {
+        SceneManager.LoadScene("Pong");
+        GameModeSetter.GameMode = "FlashlightHard";
+    }
 }
