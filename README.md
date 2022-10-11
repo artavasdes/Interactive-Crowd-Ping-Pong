@@ -20,7 +20,7 @@ We were able to create an interactive game on this large of a scale with the use
 1. Open up command prompt and cd into the directory of your choice
 2. Clone this respository
 ```
-git clone https://github.com/artavasdes/Light-Ping-Pong
+git clone https://github.com/artavasdes/Interactive-Crowd-Ping-Pong
 ```
 3. Cd into the repository
 ```
