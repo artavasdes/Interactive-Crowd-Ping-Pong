@@ -258,6 +258,9 @@ while True:
     LeftValue = ((LeftValue1+LeftValue2)//2)
     RightValue = ((RightValue1+RightValue2)//2)
 
+    LeftValue = round(LeftValue)
+    RightValue = round(RightValue)
+
     #Send Stuff
     dataArray[0] = LeftValue
     dataArray[1] = RightValue

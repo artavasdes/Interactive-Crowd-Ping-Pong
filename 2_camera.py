@@ -216,6 +216,9 @@ while True:
     RightOriginalValue = calc(RightFeed)
     RightValue = feed_calc(RightOriginalValue, RightMinVal, RightRealMaxVal)
 
+    LeftValue = round(LeftValue)
+    RightValue = round(RightValue)
+
     #Send Stuff
     dataArray[0] = LeftValue
     dataArray[1] = RightValue
