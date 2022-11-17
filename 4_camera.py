@@ -29,22 +29,22 @@ dataArray = [25, 25]
 final = "000000"
 
 #Video Start
-LeftCamera1 = cv.VideoCapture(0, cv.CAP_DSHOW)
+LeftCamera1 = cv.VideoCapture(0)
 LeftCamera1.set(cv.CAP_PROP_FPS, args.fps)
 LeftCamera1.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 LeftCamera1.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
 
-LeftCamera2 = cv.VideoCapture(1, cv.CAP_DSHOW)
+LeftCamera2 = cv.VideoCapture(1)
 LeftCamera2.set(cv.CAP_PROP_FPS, args.fps)
 LeftCamera2.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 LeftCamera2.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
 
-RightCamera1 = cv.VideoCapture(2, cv.CAP_DSHOW)
+RightCamera1 = cv.VideoCapture(2)
 RightCamera1.set(cv.CAP_PROP_FPS, args.fps)
 RightCamera1.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 RightCamera1.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
 
-RightCamera2 = cv.VideoCapture(3, cv.CAP_DSHOW)
+RightCamera2 = cv.VideoCapture(3)
 RightCamera2.set(cv.CAP_PROP_FPS, args.fps)
 RightCamera2.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 RightCamera2.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
