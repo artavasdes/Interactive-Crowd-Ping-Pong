@@ -29,7 +29,7 @@ dataArray = [25, 25]
 final = "000000"
 
 #Video Start
-camera = cv.VideoCapture(0, cv.CAP_DSHOW)
+camera = cv.VideoCapture(0)
 camera.set(cv.CAP_PROP_FPS, args.fps)
 camera.set(cv.CAP_PROP_FRAME_WIDTH, args.width)
 camera.set(cv.CAP_PROP_FRAME_HEIGHT, args.height)
