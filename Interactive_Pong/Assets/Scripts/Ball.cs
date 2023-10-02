@@ -5,7 +5,7 @@ public class Ball : MonoBehaviour
     Rigidbody2D rb;
     AudioManager audioManager;
 
-    public float speed = 200.0f;
+    public float speed = 400.0f;
 
     private void Awake()
     {
@@ -50,7 +50,7 @@ public class Ball : MonoBehaviour
             audioManager.Play("Paddle Hit");           
             if (GameModeSetter.GameMode == "Hard" || GameModeSetter.GameMode == "FlashlightHard"){
                 Vector2 CurrentDirection = rb.velocity;
-                rb.AddForce(CurrentDirection * (this.speed * 0.05f));
+                rb.AddForce(CurrentDirection * (this.speed * 0.08f));
             }
             
         }
