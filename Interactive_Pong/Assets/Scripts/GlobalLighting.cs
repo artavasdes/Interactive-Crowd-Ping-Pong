@@ -8,7 +8,7 @@ public class GlobalLighting : MonoBehaviour
     UnityEngine.Rendering.Universal.Light2D GlobalLight;
     void Start()
     {
-        if (GameModeSetter.GameMode == "Flashlight" || GameModeSetter.GameMode == "FlashlightHard"){
+        if (GameModeSetter.GameMode == "Flashlight" || GameModeSetter.GameMode == "FlashlightHard" || GameModeSetter.GameMode == "Ultimate"){
             StartCoroutine(LightCoroutine());
         }
         

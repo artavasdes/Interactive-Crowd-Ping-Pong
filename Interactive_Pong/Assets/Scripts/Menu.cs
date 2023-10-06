@@ -26,4 +26,10 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Pong");
         GameModeSetter.GameMode = "FlashlightHard";
     }
+
+    public void PlayUltimate()
+    {
+        SceneManager.LoadScene("Pong");
+        GameModeSetter.GameMode = "Ultimate";
+    }
 }
